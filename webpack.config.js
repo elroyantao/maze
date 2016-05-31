@@ -35,20 +35,20 @@ var config = {
         ],
         exclude: /node_modules/,
         include: path.join(__dirname, 'App')
-      // }, {
-      //   test: /\.less$/,
-      //   loader: ExtractTextPlugin.extract("style-loader", "css-loader?url=false!less-loader!!postcss-loader")
-      // }, {
-      //   test: /\.png$/,
-      //   loader: "url-loader?mimetype=image/png"
-      // }, {
-      //   test: /\.jpg$/,
-      //   loader: "url-loader?mimetype=image/jpg"
+      }, {
+        test: /\.less$/,
+        loader: ExtractTextPlugin.extract("style-loader", "css-loader?url=false!less-loader!!postcss-loader")
+      }, {
+        test: /\.png$/,
+        loader: "url-loader?mimetype=image/png"
+      }, {
+        test: /\.jpg$/,
+        loader: "url-loader?mimetype=image/jpg"
       }
 
     ]
   },
-  // postcss: [autoprefixer({browsers: ['last 2 versions']})]
+  postcss: [autoprefixer({browsers: ['last 2 versions']})]
 
 };
 
@@ -58,7 +58,7 @@ if (DEBUG) {
   config.plugins = config.plugins.concat([
     new webpack.HotModuleReplacementPlugin(),
     // new webpack.optimize.CommonsChunkPlugin({name: 'vendor', filname: 'js/vendor.js'}),
-    // new ExtractTextPlugin("css/[name].css")
+    new ExtractTextPlugin("css/[name].css")
   ]);
   config.output.publicPath = 'http://localhost:4001/static/';
   config.module.loaders[0].loaders[1] += '&presets[]=react-hmre'
@@ -70,7 +70,7 @@ if (DEBUG) {
         warnings: false
       }
     }),
-    // new ExtractTextPlugin("css/[name].min.css"),
+    new ExtractTextPlugin("css/[name].min.css"),
     new AssetsPlugin({
       path: path.join(__dirname, 'public')
     })

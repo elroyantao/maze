@@ -31,7 +31,8 @@ export function validateCell(cellString,x,y){
   let cell = [];
   try {
     cell = JSON.parse(cellString);
-    if(cell[0]<0 || cell[0] > y || cell[1] < 0 || cell[1] > x){
+
+    if(cell.length != 2  || cell[0]<0 || cell[0] > y || cell[1] < 0 || cell[1] > x ){
       return false
     }
     return cell;

@@ -76,7 +76,7 @@ class Canvas extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="canvas-container">
         <canvas ref="myCanvas" width="500" height="500" ></canvas>
       </div>
     )
