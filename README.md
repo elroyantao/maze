@@ -2,7 +2,8 @@
 
 
 # maze
-This is a project to find the shortest path for a maze
+This is a project to find the shortest path for a maze.
+Problem statement [here](https://github.com/elroyantao/maze/blob/master/Maze.pdf)
 
 
 ### Requirement
