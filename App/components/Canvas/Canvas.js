@@ -38,7 +38,7 @@ class Canvas extends Component {
   }
 
   drawboard() {
-
+    this.context.beginPath();
     this.height = 400 / this.props.mazeData.length;
     this.width = 400 / this.props.mazeData[0].length;
     for (let i = 0; i < this.props.mazeData.length; i++) {
@@ -73,6 +73,7 @@ class Canvas extends Component {
     this.context.fillRect(50 + (this.props.start[1] * this.width), 50 + (this.props.start[0] * this.height), this.width, this.height);
     this.context.fillStyle = "rgba(200,100,0,.3)";
     this.context.fillRect(50 + (this.props.end[1] * this.width), 50 + (this.props.end[0] * this.height), this.width, this.height);
+    this.context.closePath();
   }
   render() {
     return (
